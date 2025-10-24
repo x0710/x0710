@@ -82,3 +82,15 @@ find ~act/move -name "*.txt"
 ```
 
 2025年 10月 12日 星期日 14:04:32 CST
+
+## `-prune` 选项
+`-prune` 判断某个路径是否符合格式，如果符合会终止此次匹配，并返回`false`
+如果不符合则返回`true`
+# 用法
+```bash
+# 打印所有以`.`开头除外的文件夹中所有文件
+# find . -name '.*' -prune -o -print #这是错误的！
+find . -path './.*' -prune -o -print
+```
+
+2025年 10月 24日 星期五 16:57:52 CST
