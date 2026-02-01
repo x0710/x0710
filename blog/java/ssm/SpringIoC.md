@@ -44,6 +44,33 @@ SpringFramework 是
 | `facotry-bean` | 先通过这个bean得到实例，再通过实例去初始化另一个类 |
 | `scope` | 可选值为`singleton`单例模式、`prototype`多例模式 |
 
+#### Java 注解
+使用注解方式需要2个步骤：
+1. 为相应的类添加注解
+2. 在xml配置文件下配置扫描包
+
+##### Spring 为IoC提供了多种注解：
+| 注解 | 说明 |
+| ---- | ---- |
+| `@Repository` | 标志此类为 Dao 层 |
+| `@Service` | 标志此类为 Service 层 |
+| `@Component` | 标志此类为  
+| `@Controller` | 标志此类为 Controller 层 |
+| `@Scope(scopeName = "...") ` | 指明单例/多例模式 |
+| `@PostConstruct` | 标志方法在构造后调用 |
+| `@PreDestory` | 标志方法在销毁前调用 |
+| `@Autowired(required=true)` | setter 方法的简写 |
+| `@Qualifier` | 与`@Autowired`搭配使用 |
+| `@Resource` | 上面两个的结合，但是需要引入jakarta 250使用
+| `@Value` | 为属性赋值 |
+
+> `@Value(${valueName:DefaultValue})` 引用外部*.properties*
+
+##### 在XML配置文件下声明使用了注解
+
+```xml
+<context:component-scan base-package="<包名>,<包名>"/>
+```
 
 ### IoC 核心功能: IoC / DI
 
