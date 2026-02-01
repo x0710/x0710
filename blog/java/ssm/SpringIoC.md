@@ -82,3 +82,18 @@ System.out.println(bn3 == bn2); // true
 这样无需指定参数，IoC会自动识别工厂方法。
 > 注意：此时指定的`id`不再指向工厂类，如果要指向工厂类，需要在其`id`前加上`&`表示工厂类
 
+## `druid` 包
+由阿里开发，管理数据库链接，不用于SQL语句的执行
+
+食用方法：
+```java
+// 用于
+DruidDataSource ds = new DruidDataSource();
+// ds.set...这里用于配置sql的信息
+// 配置好的DruidDataSource通常用于JdbcTemplate模板
+
+// 用于SQL语句的执行
+JdbcTemplate jt = new JdbcTemplate();
+jt.setDataSouce(ds);
+```
+
