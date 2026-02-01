@@ -21,7 +21,7 @@ SpringFramework 是
 ### 接口
 
 * `BeanFactory` 接口，是SpringIoC容器的标准接口
-    * `ApplicationContext` 是`BeanFactory`的实现类，对原有进行扩展
+    * `ApplicationContext` 是`BeanFactory`的实现，对原有进行扩展
         * `ClassPathXmlApplicationContext` 
         * `FileSystemXmlApplicationContext` 
         * `AnnotationConfigApplicationContext` 
@@ -42,6 +42,7 @@ SpringFramework 是
 | `class` | 组件对应的java类 |
 | `factory-method` | 静态初始化方法名 |
 | `facotry-bean` | 先通过这个bean得到实例，再通过实例去初始化另一个类 |
+| `scope` | 可选值为`singleton`单例模式、`prototype`多例模式 |
 
 
 ### IoC 核心功能: IoC / DI
@@ -50,5 +51,34 @@ SpringFramework 是
 当对象控制权由应用程序转移到Spring管理
 
 2. DI 依赖注入
+采用`property`标签，并通过`name`属性来指定Setter方法，value/ref属性来指定被设置的值
 
+
+### ApplicationContext 的使用
+使用以下代码获取在*.xml*中声明的IoC对象，
+```java
+ApplicationContext ctx = new ApplicationContext("*.xml");
+// 方法1
+BeanName bn1 = ctx.getBean("beanName");
+// 方法2
+BeanName bn2 = ctx.getBean("beanName", BeanName.class);
+// 方法3，这只适用于只有一个对象时
+BeanName bn3 = ctx.getBean(BeanName.class);
+
+// 在IoC中，如果不特别声明，均使用单例模式
+System.out.println(bn1 == bn2); // true
+System.out.println(bn3 == bn2); // true
+```
+
+使用以下代码引入*.properties*文件
+```xml
+<context:property-placeholder location="classpath:<文件名>" />
+```
+
+#### 工厂方法
+如果要使用工厂方法创建对象，可以在配置文件中指定`factory-method`，否则将调用无参构造器
+
+相对于指定`factory-method`参数，更推荐为其实现一个正式的工厂类，并为其实现`FactoryBean<T>`接口
+这样无需指定参数，IoC会自动识别工厂方法。
+> 注意：此时指定的`id`不再指向工厂类，如果要指向工厂类，需要在其`id`前加上`&`表示工厂类
 
