@@ -72,6 +72,17 @@ SpringFramework 是
 <context:component-scan base-package="<包名>,<包名>"/>
 ```
 
+#### Java 类
+使用java类作为配置文件可以代替XML
+
+使用步骤：
+1. 为类添加`@Configuration`注解
+2. 实现三个注解：
+    * `@ComponentScan` java IoC包扫描路径
+    * `@PropertySource` 外部文件（如*.properties*文件）
+    * `@
+3. 使用`AnnotationConfigApplicationContext`加载IoC
+
 ### IoC 核心功能: IoC / DI
 
 1. IoC 控制反转
