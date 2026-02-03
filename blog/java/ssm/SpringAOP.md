@@ -12,7 +12,7 @@ AOP要比OOP更大一些，Java的面向对象准确来说是OOP，由于继承�
 当然是为了解决刚刚说的问题。
 
 ## 什么原理？
-采用*代理模式*，实现方式有两类：一种是父子、一种是兄弟
+采用*代理模式*，实现方式有两类：一种是父子(JDK 实现)、一种是兄弟(cglib 包)
 
 简单来说，你写好的代码被Spring重写一遍作为代理，而被重写后得到的类要么是实现同一个接口的一个类，要么是原类的子类
 
@@ -25,6 +25,12 @@ AOP要比OOP更大一些，Java的面向对象准确来说是OOP，由于继承�
 
 增强类需要由`@Component`标记需要由*IoC*容器管理，并由`@Aspect`标记为这是一个增强类。
 
+需要在XML配置文件中加入：
+```xml
+<aop:aspectj-autoproxy />
+```
+或者使用Java类配置
+
 类中的方法，可以增添下面的注解：
 | 注解 | 作用 |
 | ---- | ---- |
@@ -33,6 +39,9 @@ AOP要比OOP更大一些，Java的面向对象准确来说是OOP，由于继承�
 | `@AfterThrowing` | 发生异常时 |
 | `@AfterReturning` | 正常返回时 |
 | `@Around` | 环绕通知 |
+
+`@AfterReturning`注解需要指定`value`切点，以及`returning` 形参名表示返回值，用`Object`接收
+`@AfterThrowing`同上，但是要指定`throwing`并用`Throwable`接收
 
 被注解修饰的方法可以有`JoinPoint`作为形参，获得目标信息
 
@@ -76,9 +85,13 @@ public void before() {
 ```
 2. 用单独的类储存切点
 
-## 环绕通知 `@Around`
-环绕通知可以代替前面提到过的四种
+### 环绕通知 `@Around`
+环绕通知可以代替前面提到过的四种，
 
 用来修饰方法，形参为`ProceedingJoinPoint`，相对于`JoinPoint`来说，通过`proceed`方法手动调用
 
 
+## 优先级
+采用`@Order`注解为切点添加优先级，参数为`int`
+
+**值越小，优先级越高**
