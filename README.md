@@ -1,23 +1,131 @@
-# x0710 的个人介绍
-> 人活着无非就两件事，发现问题和解决问题。
+# Yushen Shyne's Profile
 
-## 个人介绍
+> Life is, in essence, about two things: discovering problems and solving them.
 
-Hello, 这里是x0710，今年刚刚步入大学
-个人的兴趣爱好啊什么的非常杂，欢迎你们给出的各种建议！
+## About Me
 
-这里就给出一些个人的学习进度什么的，也是对自己的一种激励！
+* 🎓 Computer Science student
+* 🦀 Currently exploring **Rust**, systems programming and backend architecture
+* 🐧 Daily driving **Arch Linux + Hyprland**
+* 🔧 Interested in:
 
+  * Operating Systems
+  * Network Programming
+  * Backend Engineering
+  * Cyber Security
 
-## 学习进度
-### 编程语言
-#### Java
-作为最先入手的语言，熟练度+++。
+I enjoy understanding how things work from the bottom up — from memory management and networking protocols to high-level application architecture.
 
-#### C
-旷世许久，直到高二才拾起了C这门语言。
-暝暝灯火之下，舍友们无非睡觉与刷题。幽幽萤火下，惟吾一人，为梦想而战。
+---
 
-#### 汇编语言
-2022年，高一。疫情，网课。
-王爽的书，到现在几乎忘记了。
+## Tech Stack
+
+### Languages
+
+<p>
+<img src="https://skillicons.dev/icons?i=rust,java,bash" />
+</p>
+
+### Backend & Systems
+
+* Rust async ecosystem
+
+  * Tokio
+  * Actix-web
+  * SQLx
+  * Utoipa
+* Linux system administration
+* Network programming
+* Database design
+
+### Tools & Environment
+
+<p>
+<img src="https://skillicons.dev/icons?i=linux,arch,neovim,git,mysql,bash,regex,tauri" />
+</p>
+
+---
+## Featured Projects
+
+### 🦀 Quivora
+
+A lightweight TCP-to-QUIC proxy/relay written in Rust.
+
+Focus:
+
+* QUIC protocol
+* TLS communication
+* Async networking
+* High performance I/O
+
+---
+
+### 🏫 Campus System
+
+A university-oriented management platform.
+
+Architecture exploration:
+
+* Modular backend design
+* Approval workflow engine
+* Role-based access control
+* AI-assisted evaluation generation
+
+---
+## Currently Learning
+
+```
+Rust
+ ├── Ownership & Lifetime Design
+ ├── Async Runtime Internals
+ ├── Network Programming
+ └── Large-scale Backend Architecture
+
+Computer Systems
+ ├── Operating Systems
+ ├── Computer Networks
+ └── Security
+```
+
+---
+## Philosophy
+
+> Understand the abstraction by understanding what is underneath it.
+
+I believe good software comes from a balance between:
+
+* clean architecture
+* performance awareness
+* simplicity
+* deep understanding of fundamentals
+
+---
+
+## GitHub Stats
+
+<p>
+<img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=transparent" />
+</p>
+
+<p>
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_USERNAME&theme=transparent" />
+</p>
+
+---
+## Contact
+
+* GitHub: @x0710
+* E-Mail: x0710_x0710@outlook.com
+
+Feel free to discuss:
+
+* Rust
+* Linux
+* Backend engineering
+* Open source
+* System design
+
+---
+
+⭐ Keep building. Keep learning.
+
